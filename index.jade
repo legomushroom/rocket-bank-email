@@ -1,4 +1,4 @@
-html
+﻿html
 	head
 		style
 			@media screen and (max-width: 480px){
@@ -30,7 +30,8 @@ html
 								tr
 									td(height="48")
 						- basePath     		= 'http://legomushroom.com/'
-						- splitterPath 		= basePath + '__img/splitter.png'
+						- baseImagePath     = basePath + '__img/'
+						- splitterPath 		= baseImagePath + 'splitter.png'
 						- tableWidth   		= '603'
 						- firstColumnWidth 	= "40"
 						table(width="#{tableWidth}", align="center", bgcolor="#ffffff", cellpadding="0", cellspacing="0", style="border-collapse:separate; font-family: arial,sans-serif; text-align:center;border: 1px solid #c7c7c7; border-bottom: 0", border="0")
@@ -41,7 +42,7 @@ html
 									td
 										table(width="100%", align="center", cellpadding="0", cellspacing="0", style="border-collapse:separate;text-align:center;", border="0")
 											tbody
-												tr: td: <img style="display:block;float:left;" src="#{ basePath }__img/good-morning.png" alt="rocketbank">
+												tr: td: <img style="display:block;float:left;" src="#{ baseImagePath }good-morning.png" alt="rocketbank">
 												tr: td(height="38px"): img(src="#{ splitterPath }", alt="splitter")
 												tr: td(style="font-size:24px;line-height:30px;") Вот и осень — самое время написать о наших летних приключениях и рассказать, чему вы научили нас за первые три месяца жизни.
 												tr: td(height="57px"): img(src="#{ splitterPath }", alt="splitter")
@@ -49,10 +50,12 @@ html
 													td(style="font-size:16px;line-height:24px;font-weight:bold;", class="h2-e") В июне Рокетбанк начал доставлять первые карты. 
 
 												tr: td(height="27px"): img(src="#{ splitterPath }", alt="splitter")
-												tr: td(style="text-align:left;font-size:16px;line-height:24px;color:#383838;", class="plain-text-e") Мы предложили дебетовую платиновую карту, красивое мобильное приложение и пакет банковских услуг, включая десять бесплатных снятий в любых банкоматах. Вы встретили нас по-разному: кто-то в твиттере написал: «О, Рокетбанк и сейчас хорош, а будет еще лучше!..», а кто-то — «rocketbank красивый, но бесполезный и дорогой…».
+												tr: td(style="text-align:left;font-size:16px;line-height:24px;color:#383838;", class="plain-text-e") Мы предложили дебетовую платиновую карту, красивое мобильное приложение и пакет банковских услуг, включая десять бесплатных снятий в любых банкоматах. Вы встретили нас по-разному. Кто-то в Твиттере написал: «О, Рокетбанк и сейчас хорош, а будет еще лучше!..», а кто-то, что «rocketbank красивый, но бесполезный и дорогой…».
 
 												tr: td(height="41px"): img(src="#{ splitterPath }", alt="splitter")
-												tr: td(style="text-align:left;font-size:16px;line-height:24px;color:#383838;", class="plain-text-e") Быстро появились статьи в прессе и веселая история со Старбаксом — внимания к нам стало заметно больше. Первые обладатели карт начали делиться опытом. Комментарии, вопросы и мнения обильно посыпались в соц.сети и чат-приложения. Отвечая на них, мы работали над своим стилем и языком, без лишних формальностей и стандартных фраз — простым, но корректным. 
+												tr: td(style="text-align:left;font-size:16px;line-height:24px;color:#383838;", class="plain-text-e") Быстро появились статьи в прессе и 
+													a(target="_blank", href="http://www.siliconrus.com/2013/07/ne-popivay-kofe-starbaks-sidya-v-kovorkinge-i-razvivaya-svoy-startap/", style="text-decoration:none;"): span(style="color:0084ff!important;text-decoration:underline") веселая история
+													|  со Старбаксом — внимания к нам стало заметно больше. Первые обладатели карт начали делиться опытом. Комментарии, вопросы и мнения обильно посыпались в соцсети и чат-приложения. Отвечая на них, мы работали над своим стилем и языком, без лишних формальностей и стандартных фраз — простым, но корректным.
 
 												tr: td(height="51px"): img(src="#{ splitterPath }", alt="splitter")
 												tr(style="text-align:left; font-weight: bold;")
@@ -63,37 +66,41 @@ html
 													td: table(width="100%", align="center", cellpadding="0", cellspacing="0", style="border-collapse:separate;text-align:center;color:#272727;", border="0")
 														tbody(style="line-height:28px;font-size:18px;")
 															tr
-																td(style="vertical-align:top;padding:0;line-height:0;font-size:0;"): div(style="vertical-align:top;padding:0;line-height:0;font-size:0;"): img(src="#{ basePath }__img/user1.png", style="display:block;float:left;margin:0;padding:0;", vspace="0", 'hspace="0")
+																td(style="vertical-align:top;padding:0;line-height:0;font-size:0;"): div(style="vertical-align:top;padding:0;line-height:0;font-size:0;"): img(src="#{ baseImagePath }user1.png", style="display:block;float:left;margin:0;padding:0;", vspace="0", 'hspace="0")
 																- borderRadius = '4px'
 																td(class="plain-text-e", style="padding: 19px; border: 1px solid #c4c4c4;border-radius: #{borderRadius};moz-border-radius: #{borderRadius};khtml-border-radius: #{borderRadius};o-border-radius: #{borderRadius};webkit-border-radius: #{borderRadius};ms-border-radius: #{borderRadius};border-top-left-radius:#{borderRadius};")
-																	p  ...комментарии ок! Чудесно видеть живые ответы в банковском деле…
+																	p  «...комментарии ок! Чудесно видеть живые ответы в банковском деле…»
 																td(width="3"): img(src="#{ splitterPath }", alt="splitter")
 
 															tr: td(height="27px"): img(src="#{ splitterPath }", alt="splitter")
 
 															tr
-																td(style="vertical-align:top;"): img(src="#{ basePath }__img/user2.png", style="display:block;float:left; margin:0;padding:0;")
-																- borderRadius = '4px'
-																td(class="plain-text-e", style="padding: 19px; border: 1px solid #c4c4c4;border-radius: #{borderRadius};moz-border-radius: #{borderRadius};khtml-border-radius: #{borderRadius};o-border-radius: #{borderRadius};webkit-border-radius: #{borderRadius};ms-border-radius: #{borderRadius};border-top-left-radius:#{borderRadius};")
-																	p  Очаровательные письма очаровательного @rocket_bank ))) ура, я в секте!
-																td(width="3"): img(src="#{ splitterPath }", alt="splitter")
-															tr: td(height="27px"): img(src="#{ splitterPath }", alt="splitter")
-															
-															tr
-																td(style="vertical-align:top;"): img(src="#{ basePath }__img/user3.png", style="display:block;float:left;margin:0;padding:0;")
+																td(style="vertical-align:top;"): img(src="#{ baseImagePath }user3.png", style="display:block;float:left;margin:0;padding:0;")
 																- borderRadius = '4px'
 																td(class="plain-text-e", style="padding: 19px 40px; border: 1px solid #c4c4c4;border-radius: #{borderRadius};moz-border-radius: #{borderRadius};khtml-border-radius: #{borderRadius};o-border-radius: #{borderRadius};webkit-border-radius: #{borderRadius};ms-border-radius: #{borderRadius};border-top-left-radius:#{borderRadius};")
-																	p  Получил карточку @rocket_bank, пока нравится. Поддержка, например, не спит в первом часу ночи и говорит без заготовленных идиотских фраз.
+																	p  «Получил карточку @rocket_bank, пока нравится. Поддержка, например, не спит в первом часу ночи и говорит без заготовленных идиотских фраз»
 																td(width="3"): img(src="#{ splitterPath }", alt="splitter")
+															
+															tr: td(height="27px"): img(src="#{ splitterPath }", alt="splitter")
+
+															tr
+																td(style="vertical-align:top;"): img(src="#{ baseImagePath }user2.png", style="display:block;float:left; margin:0;padding:0;")
+																- borderRadius = '4px'
+																td(class="plain-text-e", style="padding: 19px; border: 1px solid #c4c4c4;border-radius: #{borderRadius};moz-border-radius: #{borderRadius};khtml-border-radius: #{borderRadius};o-border-radius: #{borderRadius};webkit-border-radius: #{borderRadius};ms-border-radius: #{borderRadius};border-top-left-radius:#{borderRadius};")
+																	p  «Очаровательные письма очаровательного @rocket_bank ))) ура, я в секте!»
+																td(width="3"): img(src="#{ splitterPath }", alt="splitter")
+															
+															
+															
 
 												tr: td(height="33px"): img(src="#{ splitterPath }", alt="splitter")
 
 												tr(style="text-align:left; color: #272727;font-size:16px;line-height:24px;")
-													td(style="", class="plain-text-e") Конечно, такие сообщения мгновенно поднимают настроение всей команде, но главное — они укрепили нас в намерении построить «внимательную поддержку с человеческим общением». В общем, спасибо за поддержку и вам! 
+													td(style="", class="plain-text-e") Конечно, такие сообщения мгновенно поднимают настроение всей команде, но главное — они укрепили нас в намерении построить «внимательную поддержку с человеческим общением». В общем, спасибо за поддержку и вам!
 
 												tr: td(height="45px"): img(src="#{ splitterPath }", alt="splitter")
 
-												tr: td(height="33px"): img(src="#{ basePath }__img/thanx.png", style="display:block;float:left")
+												tr: td(height="33px"): img(src="#{ baseImagePath }thanx.png", style="display:block;float:left")
 
 												tr: td(height="36px"): img(src="#{ splitterPath }", alt="splitter")
 
@@ -103,12 +110,12 @@ html
 												tr: td(height="19px"): img(src="#{ splitterPath }", alt="splitter")
 
 												tr(style="text-align:left; color: #383838;font-size:16px;line-height:24px;")
-													td(style="", class="plain-text-e") Самые сложные вопросы достались продукту. Хит-парад возглавили «Чем вы лучше Y?» и «Почему так дорого?». Обсуждения порой были очень жаркими, а комментировать приходили сотрудники всех серьезных банков. Причина споров понятна: в первой версии у нас не было некоторых обычных банковских услуг (например, переводов, платежей, бонусов), при этом мы предложили инновационные «фишки»: внимательную поддержку, красивое и удобное приложение, продвинутую аналитику и тариф по модели «всё включено». 
+													td(style="", class="plain-text-e") Самые сложные вопросы достались продукту. Хит-парад возглавили «Чем вы лучше Y?» и «Почему так дорого?». Обсуждения порой были очень жаркими, а комментировать приходили сотрудники всех серьезных банков. Причина споров понятна: в первой версии у нас не было некоторых обычных банковских услуг (например, переводов, платежей, бонусов), при этом мы предложили инновационные «фишки»: внимательную поддержку, красивое и удобное приложение, продвинутую аналитику и тариф по модели «Всё включено».
 
 												tr: td(height="24px"): img(src="#{ splitterPath }", alt="splitter")
 
 												tr(style="text-align:left; color: #383838;font-size:16px;line-height:24px;")
-													td(style="", class="plain-text-e") Вот и получилось, что, с одной стороны, «за 290 рублей в месяц у вас даже переводов нет», а с другой стороны «...у Рокетбанка действительно самое удобное приложение из существующих». Спорить можно было бы и дальше, но теперь это не актуально, и вот почему.
+													td(style="", class="plain-text-e") Вот и получилось, что, с одной стороны, «…за 290 рублей в месяц у вас даже переводов нет», а с другой — «...у Рокетбанка действительно самое удобное приложение из существующих». Спорить можно было бы и дальше, но теперь это не актуально, и вот почему.
 
 												tr: td(height="24px"): img(src="#{ splitterPath }", alt="splitter")
 
@@ -126,14 +133,14 @@ html
 										br
 										| 290 рублей в месяц.
 
-									td: img(src="#{ basePath }__img/visa.png", style="display:block;float:left")
+									td: img(src="#{ baseImagePath }visa.png", style="display:block;float:left")
 
 						table(width="#{tableWidth}", align="center", bgcolor="#ffffff", cellpadding="0", cellspacing="0", style="border-collapse:separate; font-family: arial,sans-serif; text-align:center;border: 1px solid #c7c7c7; border-bottom: 0;border-top:0;", border="0")
 							tbody(style="margin:0;padding:0;")
 								tr(width="#{tableWidth}"): td(height="1px"): img(src="#{ splitterPath }", alt="splitter")
 								tr(width="#{tableWidth}")
 									td(width="50px"): img(src="#{ splitterPath }", alt="splitter")
-									td: img(src="#{ basePath }__img/enhancement.png", style="display:block;float:left")
+									td: img(src="#{ baseImagePath }enhancement.png", style="display:block;float:left")
 									td: img(src="#{ splitterPath }", alt="splitter")
 
 								tr(width="#{tableWidth}"): td(height="44px"): img(src="#{ splitterPath }", alt="splitter")
@@ -146,11 +153,11 @@ html
 									td(width="36px"): img(src="#{ splitterPath }", alt="splitter")
 									td: table(width="100%", align="center", bgcolor="#ffffff", cellpadding="0", cellspacing="0", style="border-collapse:separate; font-family: arial,sans-serif; text-align:center;", border="0"): tbody(style="margin:0;padding:0;")
 										tr(style="#{verticalAlign}")
-											td: img(src="#{ basePath }__img/enh1.png", style="display:block;float:left")
+											td: img(src="#{ baseImagePath }enh1.png", style="display:block;float:left")
 											td(width="41px"): img(src="#{ splitterPath }", alt="splitter")
 											td(style="text-align:left;line-height:22px;font-size:16px", class="features-e")
-												div(style="font-weight:bold;") Мили на любые авиалинии. 
-												div(style="color:#383838;") Вы зарабатываете 1,5% от суммы каждой покупки по карте милями, которые можно тратить на любой авиабилет. Это лучшее предложение среди всех дебетовых карт с программами накопления миль, которые мы знаем.
+												div(style="font-weight:bold;") Мили на любые авиалинии.
+												div(style="color:#383838;") Вы зарабатываете 1,5% от суммы каждой покупки по карте милями, которые можно тратить на любой авиабилет. Это лучшее предложение среди всех дебетовых карт с программами накопления миль, которые мы знаем.
 									td(width="30px"): img(src="#{ splitterPath }", alt="splitter")
 
 								tr: td(height="52px"): img(src="#{ splitterPath }", alt="splitter")
@@ -159,7 +166,7 @@ html
 									td(width="36px"): img(src="#{ splitterPath }", alt="splitter")
 									td: table(width="100%", align="center", bgcolor="#ffffff", cellpadding="0", cellspacing="0", style="border-collapse:separate; font-family: arial,sans-serif; text-align:center;", border="0"): tbody(style="margin:0;padding:0;")
 										tr(style="#{verticalAlign}")
-											td: img(src="#{ basePath }__img/enh2.png", style="display:block;float:left")
+											td: img(src="#{ baseImagePath }enh2.png", style="display:block;float:left")
 											td(width="41px"): img(src="#{ splitterPath }", alt="splitter")
 											td(style="text-align:left;line-height:22px;font-size:16px", class="features-e")
 												span(style="font-weight:bold;") Бесплатное пополнение счета
@@ -172,11 +179,12 @@ html
 									td(width="36px"): img(src="#{ splitterPath }", alt="splitter")
 									td: table(width="100%", align="center", bgcolor="#ffffff", cellpadding="0", cellspacing="0", style="border-collapse:separate; font-family: arial,sans-serif; text-align:center;", border="0"): tbody(style="margin:0;padding:0;")
 										tr(style="#{verticalAlign}")
-											td: img(src="#{ basePath }__img/enh3.png", style="display:block;float:left")
+											td: img(src="#{ baseImagePath }enh3.png", style="display:block;float:left")
 											td(width="41px"): img(src="#{ splitterPath }", alt="splitter")
 											td(style="text-align:left;line-height:22px;font-size:16px", class="features-e")
 												span(style="font-weight:bold;") Бесплатные и очень простые переводы друзьям,
-												span(style="color:#383838;")  у которых пока нет карты Рокетбанка. Мы нашли способ, как отправлять деньги без ввода реквизитов, пока другие банки еще только осознают, как это возможно — читайте об этом в нашем блоге.
+												span(style="color:#383838;")   у которых пока нет карты Рокетбанка. Мы нашли способ, как отправлять деньги без ввода реквизитов. Пока другие банки еще только осознают, как такое возможно, — читайте об этом в 
+													a(target="_blank", href="http://blog.rocketbank.ru/post/60917375657/miles", style="text-decoration:none;"): span(style="color:0084ff!important;text-decoration:underline") нашем блоге.
 									td(width="30px"): img(src="#{ splitterPath }", alt="splitter")
 
 								tr: td(height="52px"): img(src="#{ splitterPath }", alt="splitter")
@@ -185,11 +193,11 @@ html
 									td(width="36px"): img(src="#{ splitterPath }", alt="splitter")
 									td: table(width="100%", align="center", bgcolor="#ffffff", cellpadding="0", cellspacing="0", style="border-collapse:separate; font-family: arial,sans-serif; text-align:center;", border="0"): tbody(style="margin:0;padding:0;")
 										tr(style="#{verticalAlign}")
-											td: img(src="#{ basePath }__img/enh4.png", style="display:block;float:left")
+											td: img(src="#{ baseImagePath }enh4.png", style="display:block;float:left")
 											td(width="41px"): img(src="#{ splitterPath }", alt="splitter")
 											td(style="text-align:left;line-height:22px;font-size:16px", class="features-e")
 												span(style="font-weight:bold;text-decoration: underline;") Новая версия
-												span(style="color:#383838;")  самого продвинутого приложения для iPhone. Новый дизайн и функции, всё в унисон с вышедшей вчера iOS7.
+												span(style="color:#383838;")  самого продвинутого приложения для iPhone. Новый дизайн и функции, всё в унисон с iOS7, которая появится через неделю.
 									td(width="30px"): img(src="#{ splitterPath }", alt="splitter")
 
 								tr: td(height="15px"): img(src="#{ splitterPath }", alt="splitter")
@@ -197,7 +205,7 @@ html
 						table(width="#{tableWidth}", align="center", bgcolor="#ffffff", cellpadding="0", cellspacing="0", style="border-collapse:separate; font-family: arial,sans-serif; text-align:center;border: 1px solid #c7c7c7; border-bottom: 0;border-top:0;", border="0"): tbody(style="margin:0;padding:0;")
 							tr 
 								td(width="20px"): img(src="#{ splitterPath }", alt="splitter")
-								td: img(src="#{ basePath }__img/shadow.png", style="display:block;float:left")
+								td: img(src="#{ baseImagePath }shadow.png", style="display:block;float:left")
 								td: img(src="#{ splitterPath }", alt="splitter")
 
 
@@ -205,29 +213,29 @@ html
 								tr: td(height="24px"): img(src="#{ splitterPath }", alt="splitter")
 								tr
 									td(width="#{ firstColumnWidth - 2 }"): img(src="#{ splitterPath }", alt="splitter")
-									td(style="font-size:16px;line-height:24px;text-align:left;color: #383838", class="plain-text-e") Что же в итоге? Перед нами лучшая карта для покупок от прогрессивного банка! Судите сами: менее, чем за $9 в месяц вы получаете платиновую карту, пополнить которую можно без комиссии с любой карты за несколько секунд. За каждую покупку вы зарабатываете 1,5% милями. При этом средства на карте всегда можно перевести другу или снять в любом банкомате (также бесплатно). Всё управление услугами происходит в самом продвинутом iPhone приложении с аналитикой и внимательной поддержкой. И по-прежнему никаких кредитов, мелкого шрифта, скрытых комиссий. Это Рокетбанк 2.0!
+									td(style="font-size:16px;line-height:24px;text-align:left;color: #383838", class="plain-text-e") Что же в итоге? Перед нами лучшая карта для покупок от прогрессивного банка! Судите сами: менее чем за $9 в месяц вы получаете платиновую карту, пополнить которую можно без комиссии с любой карты за несколько секунд. За каждую покупку вы зарабатываете 1,5% милями. При этом средства на карте всегда можно перевести другу или снять в любом банкомате (также бесплатно). Всё управление услугами происходит в самом продвинутом iPhone-приложении с аналитикой и внимательной поддержкой. И по-прежнему никаких кредитов, мелкого шрифта, скрытых комиссий. Это Рокетбанк 2.0!
 									td(width="23px"): img(src="#{ splitterPath }", alt="splitter")
 
 								tr: td(height="18px"): img(src="#{ splitterPath }", alt="splitter")
 
 								tr
 									td(width="#{ firstColumnWidth - 2 }"): img(src="#{ splitterPath }", alt="splitter")
-									td(style="padding:20px;font-size:22px;line-height:24px;text-align:center;color: #383838; line-height:36px") Мы продолжаем внимательно читать ваши отзывы и комментарии, чтобы стать еще лучше. Поэтому пишите нам! :) 
+									td(style="padding:20px;font-size:22px;line-height:24px;text-align:center;color: #383838; line-height:36px") Мы продолжаем внимательно читать ваши отзывы и комментарии, чтобы стать еще лучше. Поэтому пишите нам! :) 
 									td(width="23px"): img(src="#{ splitterPath }", alt="splitter")
 
 								tr: td(height="28px"): img(src="#{ splitterPath }", alt="splitter")
 
 								tr
 									td(width="#{ firstColumnWidth - 2 }"): img(src="#{ splitterPath }", alt="splitter")
-									td(style="font-size:16px;line-height:24px;text-align:left;color: #383838", class="plain-text-e") На прощанием мы решили начислить мили и за прошлые покупки. Просто чтобы вам было приятно. Помните: банкинг уже другой! До связи!
+									td(style="font-size:16px;line-height:24px;text-align:left;color: #383838", class="plain-text-e") На прощанием мы решили начислить мили и за прошлые покупки. Просто чтобы вам было приятно. Помните: банкинг уже другой! До связи!
 									td(width="23px"): img(src="#{ splitterPath }", alt="splitter")
 
 								tr: td(height="25px"): img(src="#{ splitterPath }", alt="splitter")
 
 								tr
 									td(width="#{ firstColumnWidth - 2  }"): img(src="#{ splitterPath }", alt="splitter")
-									td(style="font-size:16px;line-height:24px;text-align:left;color: #383838;", class="plain-text-e") П.С. Кстати, у нас полностью обновился сайт, 
-										a: span(style="color:0084ff!important;text-decoration:underline") приглашаем оценить!
+									td(style="font-size:16px;line-height:24px;text-align:left;color: #383838;", class="plain-text-e") П.С. Кстати, у нас полностью обновился сайт,  
+										a(target="_blank", href="http://rocketbank.ru", style="text-decoration:none;"): span(style="color:0084ff!important;text-decoration:underline") приглашаем оценить!
 									td(width="23px"): img(src="#{ splitterPath }", alt="splitter")
 
 								tr 
@@ -239,7 +247,7 @@ html
 
 						table(width="#{tableWidth}", align="center", bgcolor="#ffffff", cellpadding="0", cellspacing="0", style="border-collapse:separate; font-family: arial,sans-serif; text-align:center;border: 1px solid #c7c7c7; border-top: 0;", border="0"): tbody(style="margin:0;padding:0;")
 							tr
-								td: a(target="_blank", href="https://itunes.apple.com/us/app/roketbank/id628392874?mt=8", title="RocketBank в App Store"): img(src="#{ basePath }__img/app-store2.png", alt="app store")
+								td: a(target="_blank", href="https://itunes.apple.com/us/app/roketbank/id628392874?mt=8", title="RocketBank в App Store"): img(src="#{ baseImagePath }app-store2.png", alt="app store")
 
 							tr: td(height="45px"): img(src="#{ splitterPath }", alt="splitter")
 
